@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Using 'Inter' is key to the Cursor look */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.5;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Glow - The "Secret Sauce" of the design */
+.background-glow {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 0%, rgba(20, 20, 30, 1) 0%, rgba(0, 0, 0, 1) 60%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.6); /* More transparent */
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    height: 64px;
+}
+
+.nav-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    height: 100%;
+}
+
+.logo-icon-img {
+    height: 24px;
+    width: auto;
+}
+
+.logo-text-img {
+    height: 16px; /* Adjusted to match scale */
+    width: auto;
+    opacity: 0.9;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #9CA3AF; /* Precise grey */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-right {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.btn-signin {
+    color: #9CA3AF;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.btn-signin:hover {
+    color: #fff;
+}
+
+.btn-download {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-download:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+}
+
+/* Hero Section */
+.hero {
+    padding: 160px 24px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 600; /* Lighter weight for that crisp tech look */
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 40px;
+    background: linear-gradient(180deg, #fff 0%, #a5a5a5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 14px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s;
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    padding: 14px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.hero-image-container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 100px rgba(0,0,0,0.5);
+    background: #111;
+}
+
+.hero-image-container img {
+    width: 100%;
+    display: block;
+}
+
+/* Trusted By */
+.trusted-by {
+    padding: 60px 24px;
+    text-align: center;
+}
+
+.trusted-by h2 {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6B7280;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.company-logos {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    opacity: 0.5;
+}
+
+/* Mimicking logos with font styling */
+.company-logos span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.03em;
+}
+
+/* Feature Sections */
+.feature-section {
+    padding: 100px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.feature-container {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr; /* Adjusted ratio */
+    gap: 80px;
+    align-items: center;
+}
+
+.feature-container.reverse {
+    direction: rtl;
+    grid-template-columns: 1.2fr 0.8fr;
+}
+
+.feature-container.reverse > * {
+    direction: ltr;
+}
+
+.feature-content h3 {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.feature-content h2 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.feature-content p {
+    font-size: 18px;
+    color: #9CA3AF;
+    margin-bottom: 32px;
+    font-weight: 400;
+}
+
+.feature-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.feature-link:hover span {
+    transform: translateX(4px);
+    transition: transform 0.2s;
+}
+
+.feature-image {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #000;
+}
+
+.feature-image img {
+    width: 100%;
+    display: block;
+}
+
+/* Specific fix for the Agent Image crop */
+.image-crop-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.agent-crop img {
+    /* The screenshot had logos at the top, so we shift content up to hide them if needed, 
+       or just display it all if it looks good. */
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Testimonials - Pixel Perfect using Image */
+.testimonials-section {
+    padding: 120px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.testimonials-title {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 80px;
+    letter-spacing: -0.02em;
+}
+
+.testimonials-image-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.testimonials-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    padding: 80px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    color: #6B7280;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
